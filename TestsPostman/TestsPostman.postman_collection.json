@@ -1,0 +1,106 @@
+{
+	"variables": [],
+	"info": {
+		"name": "TestsPostman",
+		"_postman_id": "1027adb5-1560-a2b1-b49e-7d3ac877dab4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Liste des produits",
+			"request": {
+				"url": "localhost:9090/Produits",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Trie par ordre alphabetique",
+			"request": {
+				"url": "localhost:9090/Produits/trie",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "test du trie"
+			},
+			"response": []
+		},
+		{
+			"name": "Affichier un produit qui est dans la liste",
+			"request": {
+				"url": "localhost:9090/Produits/2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Affichier un produit qui n'est pas dans la liste",
+			"request": {
+				"url": "localhost:9090/Produits/15",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Ajout de produit avec prix d'achat null",
+			"request": {
+				"url": "localhost:9090/Produits",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 4,\n  \"nom\": \"Poney en bois\",\n  \"prix\": 0,\n  \"prixAchat\": 50\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Ajout de produit avec prix d'achay valide",
+			"request": {
+				"url": "localhost:9090/Produits",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 4,\n  \"nom\": \"Poney en bois\",\n  \"prix\": 50,\n  \"prixAchat\": 60\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Marge Produit: entre prix d'achat et prix de vente",
+			"request": {
+				"url": "localhost:9090/AdminProduits",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "calcule la marge de chaque produit (différence entre prix d‘achat et prix de vente)."
+			},
+			"response": []
+		}
+	]
+}
